@@ -25,8 +25,9 @@ export default function Hero() {
               <span className="typing-cursor" aria-hidden="true" />
             </div>
             <p ref={r4} className="reveal reveal-delay-2 hero-desc">
-              Crafting premium digital experiences with modern web technologies.
-              I build beautiful, performant, and accessible applications that users love.
+              Full Stack Developer &amp; UI Engineer specializing in React, Node.js, Python,
+              and AI-powered solutions. I build beautiful, performant, and accessible
+              applications that users love.
             </p>
             <div ref={r5} className="reveal reveal-delay-3 hero-buttons">
               <button className="btn btn-primary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>

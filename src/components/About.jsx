@@ -17,18 +17,18 @@ export default function About() {
         <div className="section-header">
           <div className="section-label"><i className="fas fa-user" aria-hidden="true" /> About Me</div>
           <h2 className="section-title">Beyond the Code</h2>
-          <p className="section-subtitle">
-            A passionate developer who believes in crafting elegant solutions through clean code and thoughtful design.
+            <p className="section-subtitle">
+            Full Stack Developer &amp; AI/ML Engineer passionate about building elegant web applications, scalable APIs, and intelligent AI-powered solutions.
           </p>
         </div>
         <div className="about-grid">
           <div ref={r1} className="about-text reveal">
             <h3>Building the Future,<br />One Line at a Time</h3>
             <p>
-              I'm a Full Stack Developer and AI & Machine Learning student passionate about building modern web applications. I specialize in creating responsive user experiences that combine clean design with practical development and intelligent AI-powered solutions.
+              I'm a Full Stack Developer and AI & Machine Learning engineer passionate about building modern web applications with React, Node.js, Python, and TypeScript. I specialize in creating responsive, accessible user interfaces that combine clean design with practical engineering and intelligent AI-powered solutions.
             </p>
             <p>
-              My approach blends technical skills with a continuous learning mindset, ensuring every project I build delivers real value. From developing scalable backend systems to crafting intuitive frontend interfaces, I enjoy transforming ideas into innovative, reliable, and user-friendly digital experiences.
+              My approach blends full-stack development skills with a continuous learning mindset, ensuring every project delivers real value. From architecting scalable backend systems with Node.js and PostgreSQL to crafting intuitive frontend experiences with React and Tailwind CSS, I enjoy transforming ideas into reliable, performant digital products.
             </p>
             <div className="about-cards">
               {cards.map((c) => (
