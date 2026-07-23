@@ -42,7 +42,7 @@ export default function Contact() {
     <section className="contact" id="contact">
       <div className="container">
         <div className="section-header reveal">
-          <div className="section-label"><i className="fas fa-envelope" /> Get in Touch</div>
+          <div className="section-label"><i className="fas fa-envelope" aria-hidden="true" /> Get in Touch</div>
           <h2 className="section-title">Let's Build Something Great</h2>
           <p className="section-subtitle">
             Have a project in mind or just want to chat? Drop me a message.
@@ -56,16 +56,13 @@ export default function Contact() {
             </p>
             <div className="contact-links">
               <a href="mailto:vishnusabari876@gmail.com" className="contact-link">
-                <i className="fas fa-envelope" /> vishnusabari876@gmail.com
+                <i className="fas fa-envelope" aria-hidden="true" /> vishnusabari876@gmail.com
               </a>
               <a href="https://github.com/VISHNUSABARI876" target="_blank" rel="noopener noreferrer" className="contact-link">
-                <i className="fab fa-github" /> github.com/VISHNUSABARI876
+                <i className="fab fa-github" aria-hidden="true" /> github.com/VISHNUSABARI876
               </a>
               <a href="https://www.linkedin.com/in/vishnusabarivadivel/" target="_blank" rel="noopener noreferrer" className="contact-link">
-                <i className="fab fa-linkedin" /> linkedin.com/in/vishnusabarivadivel
-              </a>
-              <a href="https://twitter.com/vishnusabari" target="_blank" rel="noopener noreferrer" className="contact-link">
-                <i className="fab fa-x-twitter" /> @vishnusabari
+                <i className="fab fa-linkedin" aria-hidden="true" /> linkedin.com/in/vishnusabarivadivel
               </a>
             </div>
           </div>
@@ -73,19 +70,19 @@ export default function Contact() {
           <form ref={r2} className="contact-form reveal reveal-delay-1" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
-              <input type="text" id="name" placeholder="John Doe" value={form.name} onChange={handleChange} required />
+              <input type="text" id="name" placeholder="John Doe" value={form.name} onChange={handleChange} required aria-required="true" />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" placeholder="john@example.com" value={form.email} onChange={handleChange} required />
+              <input type="email" id="email" placeholder="john@example.com" value={form.email} onChange={handleChange} required aria-required="true" />
             </div>
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" placeholder="Project Collaboration" value={form.subject} onChange={handleChange} required />
+              <input type="text" id="subject" placeholder="Project Collaboration" value={form.subject} onChange={handleChange} required aria-required="true" />
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" placeholder="Tell me about your project..." value={form.message} onChange={handleChange} required />
+              <textarea id="message" placeholder="Tell me about your project..." value={form.message} onChange={handleChange} required aria-required="true" />
             </div>
             <button
               type="submit"
@@ -93,11 +90,16 @@ export default function Contact() {
               disabled={status === 'sending'}
               style={status === 'sent' ? { background: 'var(--success)' } : {}}
             >
-              {status === 'idle' && <>Send Message <i className="fas fa-arrow-right" style={{ marginLeft: 8 }} /></>}
-              {status === 'sending' && <><i className="fas fa-spinner fa-spin" /> Sending...</>}
-              {status === 'sent' && <><i className="fas fa-check" /> Message Sent!</>}
-              {status === 'error' && <><i className="fas fa-exclamation-circle" /> Something went wrong</>}
+              {status === 'idle' && <>Send Message <i className="fas fa-arrow-right" style={{ marginLeft: 8 }} aria-hidden="true" /></>}
+              {status === 'sending' && <><i className="fas fa-spinner fa-spin" aria-hidden="true" /> Sending...</>}
+              {status === 'sent' && <><i className="fas fa-check" aria-hidden="true" /> Message Sent!</>}
+              {status === 'error' && <><i className="fas fa-exclamation-circle" aria-hidden="true" /> Something went wrong</>}
             </button>
+            <p className="sr-only" role="status" aria-live="polite">
+              {status === 'sending' ? 'Sending your message...' : ''}
+              {status === 'sent' ? 'Message sent successfully!' : ''}
+              {status === 'error' ? 'Failed to send message. Please try again.' : ''}
+            </p>
           </form>
         </div>
       </div>

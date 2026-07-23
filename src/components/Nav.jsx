@@ -34,19 +34,21 @@ export default function Nav() {
   }
 
   return (
-    <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`nav ${scrolled ? 'scrolled' : ''}`} aria-label="Main navigation">
       <div className="nav-inner">
         <a href="#" className="nav-logo" onClick={(e) => scrollTo(e, '#home')}>
-          <span>VS</span> Vishnu Sabari
+          <span aria-hidden="true">VS</span> Vishnu Sabari
         </a>
 
-        <div className="nav-links">
+        <div className="nav-links" role="list">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               className={active === l.href.slice(1) ? 'active' : ''}
               onClick={(e) => scrollTo(e, l.href)}
+              role="listitem"
+              {...(active === l.href.slice(1) ? { 'aria-current': 'section' } : {})}
             >
               {l.label}
             </a>
@@ -55,7 +57,7 @@ export default function Nav() {
 
         <div className="nav-actions">
           <div className="nav-status">
-            <span className="dot" /> Available for Work
+            <span className="dot" aria-hidden="true" /> Available for Work
           </div>
           <button className="nav-cta" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             Let's Talk
@@ -63,7 +65,8 @@ export default function Nav() {
           <button
             className={`nav-mobile ${menuOpen ? 'active' : ''}`}
             onClick={() => setMenuOpen((p) => !p)}
-            aria-label="Menu"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
           >
             <span /><span /><span />
           </button>
@@ -71,7 +74,7 @@ export default function Nav() {
       </div>
 
       {menuOpen && (
-        <div className="mobile-overlay open">
+        <div className="mobile-overlay open" role="dialog" aria-label="Mobile navigation">
           {links.map((l) => (
             <a key={l.href} href={l.href} onClick={(e) => scrollTo(e, l.href)}>
               {l.label}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vishnusabari.netlify.app/sitemap.xml

@@ -3,12 +3,14 @@ import { useEffect, useRef } from 'react'
 export default function MouseFollower() {
   const ref = useRef(null)
   const pos = useRef({ x: 0, y: 0 })
-  const isTouch = 'ontouchstart' in window
 
   useEffect(() => {
-    if (isTouch) return
+    const isTouch = 'ontouchstart' in window
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (isTouch || prefersReduced) return
 
     const el = ref.current
+    if (!el) return
     let folX = 0, folY = 0
 
     const onMouse = (e) => {
@@ -19,38 +21,25 @@ export default function MouseFollower() {
     const animate = () => {
       folX += (pos.current.x - folX) * 0.15
       folY += (pos.current.y - folY) * 0.15
-      if (el) {
-        el.style.left = folX + 'px'
-        el.style.top = folY + 'px'
-      }
+      el.style.left = folX + 'px'
+      el.style.top = folY + 'px'
       raf = requestAnimationFrame(animate)
     }
 
     let raf = requestAnimationFrame(animate)
-    document.addEventListener('mousemove', onMouse)
+    document.addEventListener('mousemove', onMouse, { passive: true })
 
     return () => {
       document.removeEventListener('mousemove', onMouse)
       cancelAnimationFrame(raf)
     }
-  }, [isTouch])
-
-  if (isTouch) return null
+  }, [])
 
   return (
     <div
       ref={ref}
-      style={{
-        position: 'fixed',
-        width: 12,
-        height: 12,
-        background: 'var(--accent)',
-        borderRadius: '50%',
-        pointerEvents: 'none',
-        zIndex: 9999,
-        mixBlendMode: 'difference',
-        transform: 'translate(-50%, -50%)',
-      }}
+      className="mouse-follower"
+      aria-hidden="true"
     />
   )
 }
