@@ -20,7 +20,7 @@ const projects = [
     desc: 'Deep learning-powered system for detecting and analyzing objects in images and video streams. Features a Flask backend with real-time processing capabilities and an intuitive web interface.',
     tech: ['Python', 'Flask', 'OpenCV', 'TensorFlow', 'HTML/CSS', 'REST API'],
     github: 'https://github.com/VISHNUSABARI876/AI',
-    demo: null,
+    demo: 'https://godsey.netlify.app/',
     delay: 'reveal-delay-1',
   },
 ]
