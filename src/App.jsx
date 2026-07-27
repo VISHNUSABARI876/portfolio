@@ -8,7 +8,6 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Dock from './components/Dock'
 import MouseFollower from './components/MouseFollower'
 
 function rafThrottle(fn) {
@@ -51,7 +50,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <Dock />
       {/* Scroll progress */}
       <div className="scroll-progress" role="progressbar" aria-valuenow={Math.round(scrollProgress)} aria-label="Page scroll progress">
         <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />

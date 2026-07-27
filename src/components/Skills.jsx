@@ -1,11 +1,11 @@
 import useScrollReveal from '../hooks/useScrollReveal'
 
 const skills = [
-  { icon: 'fas fa-globe', color: '#2563EB', title: 'Frontend', tags: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'] },
+  { icon: 'fas fa-code', color: '#2563EB', title: 'Frontend', tags: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'] },
   { icon: 'fas fa-server', color: '#6366F1', title: 'Backend', tags: ['Node.js', 'Python', 'FastAPI', 'Express', 'GraphQL', 'REST APIs'] },
   { icon: 'fas fa-database', color: '#22C55E', title: 'Database', tags: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Supabase', 'Firebase'] },
-  { icon: 'fas fa-brain', color: '#ec4899', title: 'AI & ML', tags: ['TensorFlow', 'LangChain', 'OpenAI', 'Hugging Face', 'PyTorch', 'RAG'] },
-  { icon: 'fas fa-tools', color: '#f59e0b', title: 'DevOps & Tools', tags: ['Docker', 'AWS', 'CI/CD', 'Git', 'Linux', 'Nginx'] },
+  { icon: 'fas fa-robot', color: '#ec4899', title: 'AI & ML', tags: ['TensorFlow', 'LangChain', 'OpenAI', 'Hugging Face', 'PyTorch', 'RAG'] },
+  { icon: 'fas fa-cogs', color: '#f59e0b', title: 'DevOps & Tools', tags: ['Docker', 'AWS', 'CI/CD', 'Git', 'Linux', 'Nginx'] },
 ]
 
 export default function Skills() {

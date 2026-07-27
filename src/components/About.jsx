@@ -1,10 +1,39 @@
 import useScrollReveal from '../hooks/useScrollReveal'
 
+const BriefcaseIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+  </svg>
+)
+
+const GraduationIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+  </svg>
+)
+
+const CodeIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="16 18 22 12 16 6" />
+    <polyline points="8 6 2 12 8 18" />
+  </svg>
+)
+
+const GlobeIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+)
+
 const cards = [
-  { icon: 'fas fa-briefcase', title: 'Experience', desc: '1+ year professional experience including a 6-month internship in Full Stack Development.' },
-  { icon: 'fas fa-graduation-cap', title: 'Education', desc: 'B.E in CSE(AIML) from Velalar College of Engineering and Technology, Erode.' },
-  { icon: 'fas fa-code', title: 'Code', desc: '50K+ lines of production code shipped across 20+ projects.' },
-  { icon: 'fas fa-globe', title: 'Impact', desc: 'Built apps serving 100K+ users with 99.9% uptime.' },
+  { icon: <BriefcaseIcon />, title: 'Experience', desc: '1+ year professional experience including a 6-month internship in Full Stack Development.' },
+  { icon: <GraduationIcon />, title: 'Education', desc: 'B.E in CSE(AIML) from Velalar College of Engineering and Technology, Erode.' },
+  { icon: <CodeIcon />, title: 'Code', desc: '50K+ lines of production code shipped across 20+ projects.' },
+  { icon: <GlobeIcon />, title: 'Impact', desc: 'Built apps serving 100K+ users with 99.9% uptime.' },
 ]
 
 export default function About() {
@@ -33,7 +62,7 @@ export default function About() {
             <div className="about-cards">
               {cards.map((c) => (
                 <div key={c.title} className="about-card">
-                  <div className="icon"><i className={c.icon} aria-hidden="true" /></div>
+                  <div className="icon" aria-hidden="true">{c.icon}</div>
                   <h4>{c.title}</h4>
                   <p>{c.desc}</p>
                 </div>

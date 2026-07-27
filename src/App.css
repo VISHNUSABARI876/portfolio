@@ -90,7 +90,7 @@
 .about-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--success)}
 
 /* ───── Projects ───── */
-.projects{padding:var(--section-py) 0;background:var(--bg-white)}
+.projects{padding:var(--section-py) 0 calc(var(--section-py) * 0.5);background:var(--bg-white)}
 .project-card{background:var(--bg);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:var(--transition);margin-bottom:32px;display:grid;grid-template-columns:1.2fr 1fr}
 .project-card:last-child{margin-bottom:0}
 .project-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}
@@ -110,7 +110,7 @@
 .project-links{display:flex;gap:10px;flex-wrap:wrap}
 
 /* ───── Skills ───── */
-.skills{padding:var(--section-py) 0}
+.skills{padding:calc(var(--section-py) * 0.5) 0 var(--section-py)}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .skill-card{background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:var(--transition);position:relative;overflow:hidden}
 .skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-alt));transform:scaleX(0);transform-origin:left;transition:var(--transition)}
