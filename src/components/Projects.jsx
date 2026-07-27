@@ -47,7 +47,7 @@ export default function Projects() {
   )
 }
 
-function ProjectCard({ img, imgAlt, category, title, desc, tech, demo, delay }) {
+function ProjectCard({ img, imgAlt, category, title, desc, tech, github, demo, delay }) {
   const ref = useScrollReveal()
 
   return (
@@ -70,7 +70,16 @@ function ProjectCard({ img, imgAlt, category, title, desc, tech, demo, delay }) 
         <div className="project-tech">
           {tech.map((t) => <span key={t}>{t}</span>)}
         </div>
-
+        <div className="project-links">
+          <a href={github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <i className="fab fa-github" aria-hidden="true" /> Source Code
+          </a>
+          {demo && (
+            <a href={demo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <i className="fas fa-external-link-alt" aria-hidden="true" /> Live Demo
+            </a>
+          )}
+        </div>
       </div>
     </div>
   )
