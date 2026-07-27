@@ -110,7 +110,7 @@
 .project-links{display:flex;gap:10px;flex-wrap:wrap}
 
 /* ───── Skills ───── */
-.skills{padding:calc(var(--section-py) * 0.5) 0 var(--section-py)}
+.skills{padding:calc(var(--section-py) * 0.5) 0 0}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .skill-card{background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:var(--transition);position:relative;overflow:hidden}
 .skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-alt));transform:scaleX(0);transform-origin:left;transition:var(--transition)}
@@ -123,7 +123,7 @@
 .skill-tags span:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
 
 /* ───── Contact ───── */
-.contact{padding:var(--section-py) 0}
+.contact{padding:calc(var(--section-py) * 0.5) 0 var(--section-py)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .contact-info h3{font-family:var(--font-heading);font-size:1.8rem;font-weight:700;margin-bottom:16px}
 .contact-info p{color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin-bottom:32px}
