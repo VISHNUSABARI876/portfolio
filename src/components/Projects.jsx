@@ -47,7 +47,7 @@ export default function Projects() {
   )
 }
 
-function ProjectCard({ img, imgAlt, category, title, desc, tech, github, demo, delay }) {
+function ProjectCard({ img, imgAlt, category, title, desc, tech, demo, delay }) {
   const ref = useScrollReveal()
 
   return (
@@ -58,21 +58,7 @@ function ProjectCard({ img, imgAlt, category, title, desc, tech, github, demo, d
           alt={imgAlt}
           loading="lazy"
         />
-        <div className="project-overlay">
-          <div className="project-links">
-            <a href={github} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '0.82rem' }}>
-              <i className="fab fa-github" aria-hidden="true" /> GitHub
-            </a>
-            {demo && (
-              <a href={demo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{
-                padding: '10px 20px', fontSize: '0.82rem',
-                background: 'rgba(255,255,255,0.15)', color: '#fff', borderColor: 'rgba(255,255,255,0.3)',
-              }}>
-                <i className="fas fa-external-link-alt" aria-hidden="true" /> Live Demo
-              </a>
-            )}
-          </div>
-        </div>
+        <div className="project-overlay" />
       </div>
       <div className="project-content">
         <span className="project-status live">
@@ -84,16 +70,7 @@ function ProjectCard({ img, imgAlt, category, title, desc, tech, github, demo, d
         <div className="project-tech">
           {tech.map((t) => <span key={t}>{t}</span>)}
         </div>
-        <div className="project-links">
-          <a href={github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            <i className="fab fa-github" aria-hidden="true" /> Source Code
-          </a>
-          {demo && (
-            <a href={demo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              <i className="fas fa-external-link-alt" aria-hidden="true" /> Live Demo
-            </a>
-          )}
-        </div>
+
       </div>
     </div>
   )
