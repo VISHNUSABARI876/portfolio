@@ -96,7 +96,6 @@ a:focus-visible{border-radius:4px}
 .footer-bottom{flex-direction:column;gap:12px;text-align:center}
 .contact-form{padding:24px !important}
 .project-card{margin-bottom:24px !important}
-.back-to-top{bottom:20px !important;right:20px !important}
 }
 @media(max-width:480px){
 :root{--section-py:40px}

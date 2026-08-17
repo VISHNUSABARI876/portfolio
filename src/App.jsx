@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -54,14 +54,6 @@ export default function App() {
       <div className="scroll-progress" role="progressbar" aria-valuenow={Math.round(scrollProgress)} aria-label="Page scroll progress">
         <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
       </div>
-      {/* Back to top */}
-      <button
-        className={`back-to-top ${scrollProgress > 15 ? 'visible' : ''}`}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        aria-label="Back to top"
-      >
-        <i className="fas fa-arrow-up" />
-      </button>
       <GlobalStyles />
     </>
   )
@@ -72,9 +64,6 @@ function GlobalStyles() {
     <style>{`
 .scroll-progress{position:fixed;top:var(--nav-height);left:0;right:0;height:2px;z-index:999;background:transparent;pointer-events:none}
 .scroll-progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-alt));width:0%;border-radius:0 2px 2px 0;transition:width 0.1s linear}
-.back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:var(--text);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow-lg);opacity:0;transform:translateY(20px);transition:var(--transition);z-index:50;pointer-events:none}
-.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
-.back-to-top:hover{background:var(--accent);transform:translateY(-4px)}
     `}</style>
   )
 }

@@ -33,7 +33,7 @@ export default function Hero() {
               <button className="btn btn-primary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Projects <i className="fas fa-arrow-right" aria-hidden="true" />
               </button>
-              <a className="btn btn-secondary" href="/VISHNUSABARI.pdf" download>
+              <a className="btn btn-secondary" href="/VISHNUSABARI RESUME.pdf" download>
                 <i className="fas fa-download" aria-hidden="true" /> Download Resume
               </a>
             </div>
